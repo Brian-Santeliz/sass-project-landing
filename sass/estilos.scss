@@ -1,0 +1,100 @@
+@import "./_header.scss";
+@import "./_hero.scss";
+@import "./_menu.scss";
+@import "./_why.scss";
+@import "./_lastestArticles.scss";
+@import "./_footer.scss";
+@import "./_button.scss";
+
+:root{
+--darkblue: hsl(233, 26%, 24%);
+--limegreen: hsl(136, 65%, 51%);
+--brightcyan: hsl(192, 70%, 51%);
+--blue: hsl(233, 8%, 62%);
+--gray : hsl(220, 16%, 96%);
+--lightgray: hsl(0, 0%, 98%);
+--white: hsl(0, 0%, 100%);
+--paddingWrapper: 1.5em;
+font-size:16px;
+}
+
+body{
+    font-family: 'Public Sans', sans-serif;
+    margin:0;
+    color:var(--blue);
+    overflow-x: hidden;
+
+}
+
+
+.wrapper{
+    padding:0 var(--paddingWrapper);
+    width:100%;
+    box-sizing: border-box;
+    /* Desktop Design */
+    max-width: calc(1115px + 1.5em);
+    margin: auto;
+}
+
+.copy{
+    line-height: 1.7;
+    font-size: .9em;
+
+}
+
+.hidden{
+    display:none
+}
+//codigo reused
+@mixin title {
+    font-size: 2.5em;
+    color:var(--darkblue);
+    font-weight: 300;
+    line-height: 1.3;
+    margin:0;
+    margin-bottom: .5em;
+}
+.title{
+    &__h1{
+        @include title;
+    }
+    &__h2{
+        //extendiedo los estilos de h1
+        @include title;
+        font-size: 1.5em;
+    }
+    &__h3{
+        @include title;
+        font-size: 1em;
+    }
+}
+
+@mixin  icon {
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    //para aceptar el width y height
+    display: inline-flex;
+}
+.icon{
+    &__fb{
+        @include icon();
+        background-image: url(../static/images/icon-facebook.svg);
+    }
+    &__yt{
+        @include icon();
+        background-image: url(../static/images/icon-youtube.svg);
+    }
+    &__tw{
+        @include icon();
+        background-image: url(../static/images/icon-twitter.svg);
+    }
+    &__pt{
+        @include icon();
+        background-image: url(../static/images/icon-pinterest.svg);
+    }
+    &__ig{
+        @include icon();
+        background-image: url(../static/images/icon-instagram.svg);
+    }
+}
